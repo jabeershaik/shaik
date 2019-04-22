@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <title>Demo1</title>
+</head>
+
+<body onload="buildImage();">
+    <h1 id="d2"></h1>
+
+    <script>
+
+        var obj = {
+            name: "Flower Image",
+            image: "http://wallsdesk.com/wp-content/uploads/2018/04/Lilac-Wallpaper-for-Computer.jpg",
+            background: 'cyan',
+            padding: [50, 50, 50,50],
+            margin: [50, 50, 50, 50],
+            fontcolor: 'blue',
+            fontsize: 20
+        };
+
+        function buildImage(value) {
+
+            var img = document.createElement('img')
+            img.src = obj.image
+            img.title = obj.name
+            img.width = 300
+            img.height = 300
+           
+            obj.padding.forEach(function (element) {
+                document.getElementById('content').appendChild(img).style.padding = element.toString()+"px";
+            });
+            obj.margin.forEach(function (element) {
+                document.getElementById('content').appendChild(img).style.margin = element.toString()+"px";
+            });
+            document.getElementById("back").style.backgroundColor = obj.background;
+            document.getElementById("d2").innerHTML = obj.name;
+            document.getElementById("d2").style.fontSize = obj.fontsize;
+            document.getElementById("d2").style.color = obj.fontcolor;
+        }
+
+    </script>
+    <div id="back" onload="styles();">
+        <div id="content"></div>
+    </div>
+
+
+</body>
+</html>
